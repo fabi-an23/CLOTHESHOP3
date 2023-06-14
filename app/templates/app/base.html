@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClotheShop</title>
+    {% load static %}
+
+
+    {% block css %}
+    
+    {% endblock %}
+    
+</head>
+
+<body>
+    <header id="header">
+        <nav class="navbar navbar-expand-lg navbar-dark d-flex justify-content-between">
+          <div class="d-flex align-items-center">
+            <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'app/IMG/icon (1).jpg' %}" alt="logo"></a>
+            <button class="navbar-toggler collapsed justify-content-sm-center" type="button"
+              data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <div class="navbar-collapse justify-content-md-center collapse" id="navbarsExample08">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}">Inicio<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'hombre' %}">Hombre</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'mujer' %}">Mujer</a>
+              </li>
+              {% if perms.app.add_contacto %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contacto' %}">Contáctanos</a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+          <div class="d-flex align-items-center">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link text-danger" href="{% url 'registro' %}"><i class="fas fa-user-plus"></i> <span
+                    class="d-none d-md-inline-block text-dark">Registrarse</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-danger" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> <span
+                    class="d-none d-md-inline-block text-dark">Ingresar</span></a>
+              </li>
+              <li class="nav-item">
+                    <a href="{% url 'carrito' %}"> Carrito</a>
+              </li>
+              {% if user.is_authenticated %}
+              <li>
+                <a href="{% url 'logout' %}">Cerrar Sesión</a>
+              </li>
+              <li>
+                <a href="#">@{{user.username}}</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a href="{% url 'login' %}"> Iniciar Sesión</a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </nav>
+      </header>
+      
+    <div id="contenido">
+
+        {% block contenido %}
+
+        {% endblock %}
+
+    </div>  
+   
+
+    <footer>
+        <div class="container">
+          <div class="roww">
+            <div class="col-md-4">
+              <h3>Nosotros</h3>
+              <p>Somos una empresa dedicada a la comercialización de textiles y prendas de calidad.</p>
+            </div>
+            <div class="col-md-4">
+              <h3>Contacto</h3>
+              <ul>
+                <li><i class="fas fa-phone"></i> (+00) 123 456 789</li>
+                <li><i class="fas fa-envelope"></i> info@miempresa.com</li>
+                <li><i class="fas fa-map-marker-alt"></i> Av. Siempre Viva 123, Springfield</li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h3>Redes Sociales</h3>
+              <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-12">
+              <p class="text-center">&copy; 2023 ClotheShop | Todos los derechos reservados.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    <script src="{% static 'app/js/menu.js' %}"></script>
+   
+  
+  {% block js %}
+  
+  {% endblock %}
+</body>
+</html>

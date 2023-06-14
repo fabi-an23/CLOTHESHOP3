@@ -1,0 +1,351 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'app/CSS/estilos.css' %}">
+<link rel="stylesheet" href="{% static 'app/CSS/cards.css' %}">
+<link rel="stylesheet" href="{% static 'app/CSS/Contacto.css' %}">
+<link rel="stylesheet" href="{% static 'app/CSS/registro.css' %}">
+<link rel="stylesheet" href="{% static 'app/css/main.css' %}" />
+<link rel="stylesheet" href="{% static 'app/css/font.css' %}" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+{% endblock %}
+
+{% block js %}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+    integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 300,
+      modifier: 1,
+      slideShadows: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+  });
+</script>
+
+{% endblock %}
+
+{% block contenido %}
+
+<div class="contenido_wrap">
+
+    <section class="row">
+      <article id="Oferta" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+        <div>
+          <h1>Conoce nuestro catálogo </h1>
+          <br>
+          <h1>Polerones</h1>
+        </div>
+        
+
+<!-- cartas estilo venta-->
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <a href="semilla1.html">
+                <img src="{% static 'app/img/Mujer/Polerones/po1.png' %}" class="card-img-top" alt="...">
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Polerón 1</h5>
+                <p class="card-text">Descripción Polerón 1.</p>
+                <h5 class="card-subtitle mb-2 text-muted">$10.990</h5>
+                <a href="#" class="btn btn-dark">Agregar al carrito</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <a href="semilla2.html">
+                <img src="{% static 'app/img/Mujer/Polerones/po2.png' %}" class="card-img-top" alt="...">
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Polerón 2</h5>
+                <p class="card-text">Descripción Polerón 2.</p>
+                <h5 class="card-subtitle mb-2 text-muted">$12.990</h5>
+                <a href="#" class="btn btn-dark">Agregar al carrito</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <a href="semilla3.html">
+                <img src="{% static 'app/img/Mujer/Polerones/po3.png' %}" class="card-img-top" alt="...">
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Polerón 3</h5>
+                <p class="card-text">Descripción Polerón 3.</p>
+                <h5 class="card-subtitle mb-2 text-muted">$8.990</h5>
+                <a href="#" class="btn btn-dark">Agregar al carrito</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <a href="semilla1.html">
+                <img src="{% static 'app/img/Mujer/Polerones/po4.png' %}" class="card-img-top" alt="...">
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Polerón 4</h5>
+                <p class="card-text">Descripción Polerón 4.</p>
+                <h5 class="card-subtitle mb-2 text-muted">$10.990</h5>
+                <a href="#" class="btn btn-dark">Agregar al carrito</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <a href="semilla2.html">
+                <img src="{% static 'app/img/Mujer/Polerones/po5.png' %}" class="card-img-top" alt="...">
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Polerón 5</h5>
+                <p class="card-text">Descripción Polerón 5.</p>
+                <h5 class="card-subtitle mb-2 text-muted">$12.990</h5>
+                <a href="#" class="btn btn-dark">Agregar al carrito</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <a href="semilla3.html">
+                <img src="{% static 'app/img/Mujer/Polerones/po6.png' %}" class="card-img-top" alt="...">
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Polerón 6</h5>
+                <p class="card-text">Descripción Polerón 6.</p>
+                <h5 class="card-subtitle mb-2 text-muted">$8.990</h5>
+                <a href="#" class="btn btn-dark">Agregar al carrito</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <section class="row">
+      <article id="Oferta" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+        <div>
+          <h1>Pantalones</h1>
+        </div>
+      </article>
+
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <a href="semilla1.html">
+              <img src="{% static 'app/IMG/Mujer/Pantalones/2e596edc44884006a9cbaef3011a34de_9366.png' %}" class="card-img-top" alt="...">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Pantalón 1</h5>
+              <p class="card-text">Descripción Pantalón 1.</p>
+              <h5 class="card-subtitle mb-2 text-muted">$10.990</h5>
+              <a href="#" class="btn btn-dark">Agregar al carrito</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <a href="semilla2.html">
+              <img src="{% static 'app/IMG/Mujer/Pantalones/DM6419_025_A_PREM.png' %}" class="card-img-top" alt="...">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Pantalón 2</h5>
+              <p class="card-text">Descripción Pantalón 2.</p>
+              <h5 class="card-subtitle mb-2 text-muted">$12.990</h5>
+              <a href="#" class="btn btn-dark">Agregar al carrito</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <a href="semilla3.html">
+              <img src="{% static 'app/IMG/Mujer/Pantalones/DM7037_073_A_PREM.png' %}" class="card-img-top" alt="...">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Pantalón 3</h5>
+              <p class="card-text">Descripción Pantalón 3.</p>
+              <h5 class="card-subtitle mb-2 text-muted">$8.990</h5>
+              <a href="#" class="btn btn-dark">Agregar al carrito</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="row">
+      <article id="Oferta" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+        <div>
+        </div>
+      </article>
+
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <a href="semilla1.html">
+              <img src="{% static 'app/IMG/Mujer/Pantalones/DQ6767_667_A_PREM.png' %}" class="card-img-top" alt="...">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Pantalón 4</h5>
+              <p class="card-text">Descripción Pantalón 4.</p>
+              <h5 class="card-subtitle mb-2 text-muted">$10.990</h5>
+              <a href="#" class="btn btn-dark">Agregar al carrito</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <a href="semilla2.html">
+              <img src="{% static 'app/img/Mujer/Pantalones/e90b074232014a54b11daca700e106ee_9366.png' %}" class="card-img-top" alt="...">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Pantalón 5</h5>
+              <p class="card-text">Descripción Pantalón 5.</p>
+              <h5 class="card-subtitle mb-2 text-muted">$12.990</h5>
+              <a href="#" class="btn btn-dark">Agregar al carrito</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <a href="semilla3.html">
+              <img src="{% static 'app/IMG/Mujer/Pantalones/f3bd5e0dc67e48bea369aefd00c6b3e6_9366.png' %}" class="card-img-top" alt="...">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Pantalón 6</h5>
+              <p class="card-text">Descripción Pantalón 6.</p>
+              <h5 class="card-subtitle mb-2 text-muted">$8.990</h5>
+              <a href="#" class="btn btn-dark">Agregar al carrito</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <article id="Oferta" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+        <div>
+          <h1>Poleras</h1>
+        </div>
+      </article>
+
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <a href="semilla1.html">
+              <img src="{% static 'app/IMG/Mujer/Poleras/p1.png' %}" class="card-img-top" alt="...">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Polera 1</h5>
+              <p class="card-text">Descripción Polera 1.</p>
+              <h5 class="card-subtitle mb-2 text-muted">$10.990</h5>
+              <a href="#" class="btn btn-dark">Agregar al carrito</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <a href="semilla2.html">
+              <img src="{% static 'app/img/Mujer/Poleras/p2.png' %}" class="card-img-top" alt="...">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Polera 2</h5>
+              <p class="card-text">Descripción Polera 2.</p>
+              <h5 class="card-subtitle mb-2 text-muted">$12.990</h5>
+              <a href="#" class="btn btn-dark">Agregar al carrito</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <a href="semilla3.html">
+              <img src="{% static 'app/img/Mujer/Poleras/p3.png' %}" class="card-img-top" alt="...">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Polera 3</h5>
+              <p class="card-text">Descripción Polera 3.</p>
+              <h5 class="card-subtitle mb-2 text-muted">$8.990</h5>
+              <a href="#" class="btn btn-dark">Agregar al carrito</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <article id="Oferta" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+        <div>
+        </div>
+      </article>
+
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <a href="semilla1.html">
+              <img src="{% static 'app/img/Mujer/Poleras/p4.png' %}" class="card-img-top" alt="...">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Polera 4</h5>
+              <p class="card-text">Descripción Polera 4.</p>
+              <h5 class="card-subtitle mb-2 text-muted">$10.990</h5>
+              <a href="#" class="btn btn-dark">Agregar al carrito</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <a href="semilla2.html">
+              <img src="{% static 'app/img/Mujer/Poleras/p5.png' %}" class="card-img-top" alt="...">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Polera 5</h5>
+              <p class="card-text">Descripción Polera 5.</p>
+              <h5 class="card-subtitle mb-2 text-muted">$12.990</h5>
+              <a href="#" class="btn btn-dark">Agregar al carrito</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <a href="semilla3.html">
+              <img src="{% static 'app/img/Mujer/Poleras/p6.png' %}" class="card-img-top" alt="...">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Polera 6</h5>
+              <p class="card-text">Descripción Polera 6.</p>
+              <h5 class="card-subtitle mb-2 text-muted">$8.990</h5>
+              <a href="#" class="btn btn-dark">Agregar al carrito</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+{% endblock %}
